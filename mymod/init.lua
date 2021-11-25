@@ -2,31 +2,36 @@ minetest.register_node("mymod:aleks", {
     description = "My node", 
     tiles = {"bloque_aleks.jpg"}, --imagen que definira el cubo (la imagen del conejo se repite en cada cara)
     is_ground_content = true, --si no se genera en cuevas, cambiarlo
+    stack_max = 64,
     groups = {cracky = 3}, --cracky = tiempo que tarda en romper el cubo
     drop = "mymod:aleks_dropeo",
   })
 minetest.register_craftitem("mymod:aleks_dropeo", {
     description = "My Item",
-    inventory_image = "", --poner una
+    inventory_image = "orichalcum_fragmento.png", --poner una
 })
 
 minetest.registrer_craftitem("mymod:aleks_ingot", {
     description = "My Item",
-    inventory_image = "" --poner una
+    inventory_image = "orichalcum_lingote.png", --poner una
+    stack_max = 64,
+})
 
 minetest.register_craft({ --revisalo
     type = "cooking",
     output = "mymod: aleks_ingot",
-    recipe = "default:coalblock",
+    recipe = "mymod:aleks_dropeo",
     cooktime = 13, --burntime
+    stack_max = 64,
   })
 
 minetest.register_tool ("mymod:aleks_pico", {
     description = "My Tool",
-    inventory_image = "", --poner una
+    inventory_image = "orichalcum_pico.png", --poner una
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
       max_drop_level = 1,
+      stack_max = 64,
       groupcaps = {
         cracky = {
           maxlevel = 2,
@@ -40,9 +45,18 @@ minetest.register_tool ("mymod:aleks_pico", {
     },
   })
 
+  minetest.register_craft({
+      output = "mymod:aleks_pico",
+      recipe = {
+        {'mymod:aleks_ingot', 'mymod:aleks_ingot'},
+          {'', 'group:stick'},
+          {'', 'group:stick'},
+      },
+  })
+
 minetest.register_tool ("mymod:aleks_espada", {
     description = "My Tool",
-    inventory_image = "", --poner una
+    inventory_image = "orichalcum_espada.png", --poner una
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
       max_drop_level = 1,
@@ -59,9 +73,18 @@ minetest.register_tool ("mymod:aleks_espada", {
     },
   })
 
+  minetest.register_craft({
+    output = "mymod:aleks_espada",
+    recipe = {
+      {'mymod:aleks_ingot'},
+      {'mymod:aleks_ingot'},
+      {'group:stick'},
+    },
+})
+
 minetest.register_tool ("mymod:aleks_pala", {
     description = "My Tool",
-    inventory_image = "", --poner una
+    inventory_image = "orichalcum_pala.png", --poner una
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
       max_drop_level = 1,
@@ -78,9 +101,18 @@ minetest.register_tool ("mymod:aleks_pala", {
     },
   })
 
+  minetest.register_craft({
+    output = "mymod:aleks_pala",
+    recipe = {
+      {'mymod:aleks_ingot'},
+      {'group:stick'},
+      {'group:stick'},
+    },
+})
+
 minetest.register_tool ("mymod:aleks_hacha", {
     description = "My Tool",
-    inventory_image = "", --poner una
+    inventory_image = "orichalcum_hacha.png", --poner una
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
       max_drop_level = 1,
@@ -97,13 +129,27 @@ minetest.register_tool ("mymod:aleks_hacha", {
     },
   })
 
-minetest.register_ore(
+  minetest.register_craft({
+    output = "mymod:aleks_hacha",
+    recipe = {
+      {'mymod:aleks_ingot', 'mymod:aleks_ingot'},
+      {'mymod:aleks_ingot', 'group:stick'},
+      {'', 'group:stick'},
+    },
+})
+
+minetest.register_ore({
   --mirar lo del blob y stratum
+  ore_type = "scatter",
+  ore = "mymod:aleks",
+  wherein = "default:dirt",
+  clust_scarcity = 8*8*8,
+  clust_num_ores = 10,
+  clust_size = 3,
+  y_max = 10000,
+  y_min = 4000, 
   
-  
-  
-  
-  )
+})
           
       
       
