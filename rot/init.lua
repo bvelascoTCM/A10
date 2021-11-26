@@ -1,6 +1,12 @@
 local c_dirt = minetest.get_content_id("default:dirt")
 local c_rot_dirt = minetest.get_content_id("rot:dirt")
 
+function delete_block_top(pos)
+  pos.y = pos.y + 1
+  minetest.remove_node(pos)
+end
+
+
 minetest.register_node("rot: dirt", 
   {description = "dirt",
    tiles = "rot_cube.png",
@@ -26,6 +32,7 @@ minetest.register_abm({
     action = function (pos, node, active_object_count, active_object_count_wider)
       local pos = {x = pos.x,  y = pos.y, z = pos.z}
       minetest.set_node(pos, {name = "rot: dirt"})
+      delete_block_top(pos)
   })
 
 minetest.register_abm({
@@ -37,6 +44,7 @@ minetest.register_abm({
     action = function (pos, node, active_object_count, active_object_count_wider)
       local pos = {x = pos.x + 1,  y = pos.y, z = pos.z}
       minetest.set_node(pos, {name = "rot: dirt"})
+      delete_block_top(pos)
   })
 
 minetest.register_abm({
@@ -48,6 +56,7 @@ minetest.register_abm({
     action = function (pos, node, active_object_count, active_object_count_wider)
       local pos = {x = pos.x,  y = pos.y, z = pos.z}
       minetest.set_node(pos, {name = "default : air"})
+      delete_block_top(pos)
   
 })
 
