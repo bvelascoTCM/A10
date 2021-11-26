@@ -16,9 +16,9 @@ minetest.register_node("rot: dirt",
 
 minetest.register_node("rot: purgator", 
   {description = "purgator",
-   tiles = "", --maybe necesitamos la textura de la dirt
-   is_ground_content = true, --maybe quitar esta vaina
-   groups = {cracky = 3} --y esto también
+   tiles = "Cure_cubo.png", 
+   is_ground_content = false, 
+   groups = {cracky = 3} 
   })
 
   
