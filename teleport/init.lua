@@ -1,15 +1,11 @@
 minetest.register_node("teleport:pad", {
     description = "pad",
-    tiles = "Teleport_cubo.png", --completar
+    tiles = "Teleport_cubo.png", 
     is_ground_content = false,
     stack_max = 64,
     groups = {cracky = 3},
-    drop = "teleport:pad", --que cuando lo rompas dropee el pad ????
-    
-    --on_punch = function (pos, node, player, pointed_thing) --el on_punch está mal
-      --local player = minetest.get_player_by_name("singleplayer")
-      --local pos = {x = meta:get_int("x"), y = meta:get_int("y"), z = meta:get_int("z")}
-      --local meta = minetest.get_meta({x = pos.x, y = pos.y, z = pos.z}), --no se si se puede meter pos o tiene que ser un numero
+    drop = "teleport:pad", 
+
     after_place_node = function ()
       local player = minetest.get_player_by_name("singleplayer")
       local stack = ItemStack ("teleport: command")

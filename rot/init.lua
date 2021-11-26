@@ -71,8 +71,10 @@ minetest.register_abm({
 
 local function purge_rotdirt (pos, size)
   local vm = minetest.get_voxel_manip()
-  local emin,emax = vm:read_from_map(pos) --ESTO ESTA MAL, hay que hacerlo en base a size y con una pos, NO 2
-  local a = VoxelArea:new{MinEdge = emin, MaxEdge = emax}
+  local eminx,emaxx = vm:read_from_map(pos.x - size/2, pos.x + size/2) 
+  local eminy, emaxy = vm:read_from_map(pos.y - size/2, pos.y + size/2 )
+  local eminz, emaxz = vm:read_from_map(pos.z - size/2, pos.z + size/2)
+  local a = VoxelArea:new{MinEdge = {eminx, eminy, eminz}, MaxEdge = {emaxx, emaxy, emaxz}} --maybe esta mal
   local data = vm:get_data()
   
   for z = pos.z do

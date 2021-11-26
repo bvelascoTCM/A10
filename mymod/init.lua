@@ -8,16 +8,16 @@ minetest.register_node("mymod:aleks", {
   })
 minetest.register_craftitem("mymod:aleks_dropeo", {
     description = "My Item",
-    inventory_image = "orichalcum_fragmento.png", --poner una
+    inventory_image = "orichalcum_fragmento.png",
 })
 
 minetest.registrer_craftitem("mymod:aleks_ingot", {
     description = "My Item",
-    inventory_image = "orichalcum_lingote.png", --poner una
+    inventory_image = "orichalcum_lingote.png", 
     stack_max = 64,
 })
 
-minetest.register_craft({ --revisalo
+minetest.register_craft({ 
     type = "cooking",
     output = "mymod: aleks_ingot",
     recipe = "mymod:aleks_dropeo",
@@ -27,7 +27,7 @@ minetest.register_craft({ --revisalo
 
 minetest.register_tool ("mymod:aleks_pico", {
     description = "My Tool",
-    inventory_image = "orichalcum_pico.png", --poner una
+    inventory_image = "orichalcum_pico.png", 
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
       max_drop_level = 1,
@@ -56,7 +56,7 @@ minetest.register_tool ("mymod:aleks_pico", {
 
 minetest.register_tool ("mymod:aleks_espada", {
     description = "My Tool",
-    inventory_image = "orichalcum_espada.png", --poner una
+    inventory_image = "orichalcum_espada.png",
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
       max_drop_level = 1,
@@ -84,7 +84,7 @@ minetest.register_tool ("mymod:aleks_espada", {
 
 minetest.register_tool ("mymod:aleks_pala", {
     description = "My Tool",
-    inventory_image = "orichalcum_pala.png", --poner una
+    inventory_image = "orichalcum_pala.png", 
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
       max_drop_level = 1,
@@ -112,7 +112,7 @@ minetest.register_tool ("mymod:aleks_pala", {
 
 minetest.register_tool ("mymod:aleks_hacha", {
     description = "My Tool",
-    inventory_image = "orichalcum_hacha.png", --poner una
+    inventory_image = "orichalcum_hacha.png", 
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
       max_drop_level = 1,
@@ -139,7 +139,6 @@ minetest.register_tool ("mymod:aleks_hacha", {
 })
 
 minetest.register_ore({
-  --mirar lo del blob y stratum
   ore_type = "scatter",
   ore = "mymod:aleks",
   wherein = "default:dirt",
@@ -150,14 +149,5 @@ minetest.register_ore({
   y_min = 4000, 
   
 })
-          
-      
-      
-      
-
-
-      
-
-
 
 --si son items del mod se pone mymod:cosa, si no se pone default:cosa o lo que sea
