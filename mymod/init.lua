@@ -1,6 +1,7 @@
 minetest.register_craftitem("mymod:aleks_dropeo", {
     description = "My Item",
     inventory_image = "orichalcum_fragmento.png",
+    stack_max = 64,
 })
 
 minetest.register_node("mymod:aleks", {
