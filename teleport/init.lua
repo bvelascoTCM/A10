@@ -10,7 +10,7 @@ minetest.register_craftitem("teleport:command", {
 })
 
 minetest.register_node("teleport:pad", {
-  description = "pad",
+  description = "Teleporter",
   tiles = {"Teleport_cubo.png"},
   is_ground_content = false,
   stack_max = 64,

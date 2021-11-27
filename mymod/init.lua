@@ -1,5 +1,5 @@
 minetest.register_craftitem("mymod:aleks_dropeo", {
-    description = "My Item",
+    description = "Fragmento de Orichalcum",
     inventory_image = "orichalcum_fragmento.png",
     stack_max = 64,
 })
@@ -14,7 +14,7 @@ minetest.register_node("mymod:aleks", {
 
 
 minetest.register_craftitem("mymod:aleks_ingot", {
-    description = "My Item",
+    description = "Lingote de Orichalcum",
     inventory_image = "orichalcum_lingote.png", 
     stack_max = 64,
 })
@@ -27,7 +27,7 @@ minetest.register_craft({
   })
 
 minetest.register_tool ("mymod:aleks_pico", {
-    description = "My Tool",
+    description = "Pico de Orichalcum",
     inventory_image = "orichalcum_pico.png", 
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
@@ -49,14 +49,14 @@ minetest.register_tool ("mymod:aleks_pico", {
   minetest.register_craft({
       output = "mymod:aleks_pico",
       recipe = {
-        {'mymod:aleks_ingot', 'mymod:aleks_ingot'},
-          {'', 'group:stick'},
-          {'', 'group:stick'},
+        {'mymod:aleks_ingot', 'mymod:aleks_ingot'}, 
+        {'', 'group:stick'},
+        {'', 'group:stick'},
       },
   })
 
 minetest.register_tool ("mymod:aleks_espada", {
-    description = "My Tool",
+    description = "Espada de Orichalcum",
     inventory_image = "orichalcum_espada.png",
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
@@ -84,7 +84,7 @@ minetest.register_tool ("mymod:aleks_espada", {
 })
 
 minetest.register_tool ("mymod:aleks_pala", {
-    description = "My Tool",
+    description = "Pala de Orichalcum",
     inventory_image = "orichalcum_pala.png", 
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
@@ -112,7 +112,7 @@ minetest.register_tool ("mymod:aleks_pala", {
 })
 
 minetest.register_tool ("mymod:aleks_hacha", {
-    description = "My Tool",
+    description = "Hacha de Orichalcum",
     inventory_image = "orichalcum_hacha.png", 
     tool_capabilities = {
       full_punch_interval = 0.01, --si peta cambiar esto
