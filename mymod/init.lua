@@ -139,15 +139,14 @@ minetest.register_tool ("mymod:aleks_hacha", {
 })
 
 minetest.register_ore({
-  ore_type = "scatter",
-  ore = "mymod:aleks",
-  wherein = "default:dirt",
-  clust_scarcity = 8*8*8,
-  clust_num_ores = 10,
-  clust_size = 3,
-  y_max = -100,
-  y_min = -40, 
-  
+    ore_type = "scatter",
+    ore = "mymod:aleks",
+    wherein = "default:stone",
+    clust_scarcity = 9 * 9 * 9,
+    clust_num_ores = 14,
+    clust_size = 4,
+    y_max = 31000,
+    y_min = -100
 })
 
 --si son items del mod se pone mymod:cosa, si no se pone default:cosa o lo que sea
