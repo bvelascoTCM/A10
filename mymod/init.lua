@@ -7,7 +7,6 @@ minetest.register_craftitem("mymod:aleks_dropeo", {
 minetest.register_node("mymod:aleks", {
     description = "My node", 
     tiles = {"bloque_aleks.png"}, --bloque_aleks.png
-    is_ground_content = true, --si no se genera en cuevas, cambiarlo
     stack_max = 64,
     groups = {cracky = 3}, --cracky = tiempo que tarda en romper el cubo
     drop = "mymod:aleks_dropeo",
