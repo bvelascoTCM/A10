@@ -5,8 +5,8 @@ end
 
 
 minetest.register_node("rot:dirt",  
-  {description = "dirt",
-   tiles = "rot_cube.png",
+  {description = "Rot",
+   tiles = "Rot_cubo.png",
    is_ground_content = true,
    groups = {cracky = 3}
  })
@@ -15,7 +15,7 @@ local c_dirt = minetest.get_content_id("default:dirt")
 local c_rot_dirt = minetest.get_content_id("rot:dirt")
 
 minetest.register_node("rot:purgator", 
-  {description = "purgator",
+  {description = "Purgator",
    tiles = "Cure_cubo.png", 
    is_ground_content = false, 
    groups = {cracky = 3} 
@@ -43,7 +43,7 @@ minetest.register_abm({
     catch_up = false,
     action = function (pos, node, active_object_count, active_object_count_wider)
       local pos = {x = pos.x + 1,  y = pos.y, z = pos.z}
-      minetest.set_node(pos, {name = "rot: dirt"})
+      minetest.set_node(pos, {name = "rot:dirt"})
       delete_block_top(pos)
     end
     
@@ -57,23 +57,23 @@ minetest.register_abm({
     catch_up = false,
     action = function (pos, node, active_object_count, active_object_count_wider)
       local pos = {x = pos.x,  y = pos.y, z = pos.z}
-      minetest.set_node(pos, {name = "default : air"})
+      minetest.set_node(pos, {name = "default:air"})
       delete_block_top(pos)
     end
     
   
 })
 
-minetest.register_abm({
+minetest.register_abm({ 
     nodenames = "rot:purgator",
     interval = 10.0,
     chance = 1,
     catch_up = false,
-    purge_patata = function (pos, size)
+    action = function (pos, size) --error
       local vm = minetest.get_voxel_manip()
-      local eminx,emaxx = vm:read_from_map(pos.x - size/2, pos.x + size/2) 
-      local eminy, emaxy = vm:read_from_map(pos.y - size/2, pos.y + size/2 )
-      local eminz, emaxz = vm:read_from_map(pos.z - size/2, pos.z + size/2)
+      local eminx,emaxx = vm:read_from_map(pos.x - size/2, pos.x + size/2) --error la x del size
+      local eminy, emaxy = vm:read_from_map(pos.y - size.y/2, pos.y + size.y/2 )
+      local eminz, emaxz = vm:read_from_map(pos.z - size.z/2, pos.z + size.z/2)
       local a = VoxelArea:new{MinEdge = {eminx, eminy, eminz}, MaxEdge = {emaxx, emaxy, emaxz}} --maybe esta mal
       local data = vm:get_data()
   
@@ -95,7 +95,7 @@ end--maybe está mal
     
   })
 
---82: Required field 'action' of type function
+
 
 
 

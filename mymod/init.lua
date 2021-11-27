@@ -1,6 +1,6 @@
 minetest.register_node("mymod:aleks", {
     description = "My node", 
-    tiles = {"bloque_aleks.jpg"}, --imagen que definira el cubo (la imagen del conejo se repite en cada cara)
+    tiles = {"bloque_aleks.png"}, --bloque_aleks.png
     is_ground_content = true, --si no se genera en cuevas, cambiarlo
     stack_max = 64,
     groups = {cracky = 3}, --cracky = tiempo que tarda en romper el cubo
@@ -11,7 +11,7 @@ minetest.register_craftitem("mymod:aleks_dropeo", {
     inventory_image = "orichalcum_fragmento.png",
 })
 
-minetest.registrer_craftitem("mymod:aleks_ingot", {
+minetest.register_craftitem("mymod:aleks_ingot", {
     description = "My Item",
     inventory_image = "orichalcum_lingote.png", 
     stack_max = 64,
@@ -145,8 +145,8 @@ minetest.register_ore({
   clust_scarcity = 8*8*8,
   clust_num_ores = 10,
   clust_size = 3,
-  y_max = 10000,
-  y_min = 4000, 
+  y_max = -100,
+  y_min = -40, 
   
 })
 
