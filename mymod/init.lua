@@ -1,3 +1,8 @@
+minetest.register_craftitem("mymod:aleks_dropeo", {
+    description = "My Item",
+    inventory_image = "orichalcum_fragmento.png",
+})
+
 minetest.register_node("mymod:aleks", {
     description = "My node", 
     tiles = {"bloque_aleks.png"}, --bloque_aleks.png
@@ -6,10 +11,7 @@ minetest.register_node("mymod:aleks", {
     groups = {cracky = 3}, --cracky = tiempo que tarda en romper el cubo
     drop = "mymod:aleks_dropeo",
   })
-minetest.register_craftitem("mymod:aleks_dropeo", {
-    description = "My Item",
-    inventory_image = "orichalcum_fragmento.png",
-})
+
 
 minetest.register_craftitem("mymod:aleks_ingot", {
     description = "My Item",
