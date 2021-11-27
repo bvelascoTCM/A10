@@ -19,10 +19,9 @@ minetest.register_craftitem("mymod:aleks_ingot", {
 
 minetest.register_craft({ 
     type = "cooking",
+    cooktime = 13, --burntime
     output = "mymod: aleks_ingot",
     recipe = "mymod:aleks_dropeo",
-    cooktime = 13, --burntime
-    stack_max = 64,
   })
 
 minetest.register_tool ("mymod:aleks_pico", {
